@@ -48,8 +48,8 @@ func main() {
 
 					log.Println("Sorting files.")
 					for _, f := range files {
-						if !f.IsDir() {
-							log.Println(f.Name())
+						if f.IsDir() {
+							continue
 						}
 
 						for _, r := range conf.Rules {
