@@ -9,5 +9,6 @@ At the moment it's just a rough proof of concept, a lot is about to change. Here
 - [ ] Tests
 - [ ] Check registered target paths when reading the config file
 - [ ] File overwrite option
+- [ ] Error handling: the program shouldn't exit on every error
 - [ ] Ensure everything is cross-platform
 - [ ] Install script
