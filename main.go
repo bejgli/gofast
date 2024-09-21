@@ -6,7 +6,7 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/bejgli/download-sorter/sorter"
+	"github.com/bejgli/gofast/sorter"
 	"github.com/fsnotify/fsnotify"
 )
 

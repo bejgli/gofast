@@ -1,4 +1,4 @@
-module github.com/bejgli/download-sorter
+module github.com/bejgli/gofast
 
 go 1.21.10
 
