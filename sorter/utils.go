@@ -4,6 +4,7 @@ import (
 	"io"
 	"io/fs"
 	"os"
+	"path/filepath"
 	"regexp"
 )
 
@@ -41,7 +42,9 @@ func SortFiles(files []fs.DirEntry, conf Config) (err error) {
 
 		for _, r := range conf.Rules {
 			if regexp.MustCompile(r.Pattern).MatchString(f.Name()) {
-				_, err = moveFile(conf.Source+"/"+f.Name(), r.Target+"/"+f.Name())
+				srcPath := filepath.Join(conf.Source, f.Name())
+				dstPath := filepath.Join(r.Target, f.Name())
+				_, err = moveFile(srcPath, dstPath)
 				if err != nil {
 					return
 				}
