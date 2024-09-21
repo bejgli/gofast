@@ -11,6 +11,7 @@ At the moment it's just a rough proof of concept, a lot is about to change. Here
 - [ ] File overwrite option
 - [ ] File size limit option
 - [ ] Create target directory option
+- [ ] Graceful shutdown, signal handling
 - [ ] Error handling: the program shouldn't exit on every error
 - [ ] Structured logging
 - [ ] Ensure everything is cross-platform
