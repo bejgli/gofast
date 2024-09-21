@@ -15,5 +15,6 @@ At the moment it's just a rough proof of concept, a lot is about to change. Here
 - [ ] Error handling: the program shouldn't exit on every error
 - [ ] Structured logging
 - [ ] Ensure everything is cross-platform
+- [ ] Usage docs
 - [ ] Install script
 - [ ] Maybe a simple server for configuration via gui in the browser, so that my parents can also use it :)
