@@ -7,7 +7,7 @@ At the moment it's just a rough proof of concept, a lot is about to change. Here
 
 ## Todo
 - [ ] Tests
-- [ ] Check registered target paths when reading the config file
+- [x] Check regex patterns and directories
 - [ ] File overwrite option
 - [ ] File size limit option
 - [ ] Create target directory option
