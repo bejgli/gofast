@@ -24,12 +24,23 @@ func main() {
 		log.Fatal(err)
 	}
 
+	badPattern := conf.CheckPatterns()
+	if badPattern != "" {
+		log.Fatalf("Bad regex pattern '%s'.", badPattern)
+	}
+	badDir := conf.CheckDirs()
+	if badDir != "" {
+		log.Fatalf("Directory '%s' doesn't exist.", badDir)
+	}
+
 	// Create new watcher.
 	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer watcher.Close()
+
+	log.Print("Watching: ", conf.Source)
 
 	go watchLoop(watcher, conf)
 
