@@ -36,3 +36,15 @@ func TestCheckDirsBadDirs(t *testing.T) {
 	// TODO
 	t.Skip()
 }
+
+func TestSortFiles(t *testing.T) {
+	t.Skip()
+}
+
+func TestMoveFile(t *testing.T) {
+	t.Skip()
+}
+
+func TestCheckExisting(t *testing.T) {
+	t.Skip()
+}

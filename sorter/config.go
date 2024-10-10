@@ -8,6 +8,7 @@ import (
 type rule struct {
 	Pattern string
 	Target  string
+	Overwrite bool
 }
 
 type Config struct {
