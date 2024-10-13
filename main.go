@@ -1,25 +1,28 @@
 package main
 
 import (
-	"encoding/json"
 	"log"
 	"os"
 
 	"github.com/bejgli/gofast/sorter"
 	"github.com/fsnotify/fsnotify"
+	"gopkg.in/yaml.v3"
 )
 
-var CONFIGPATH = "patterns.json"
+const (
+	CONFIGDIR  = ".gofast"
+	CONFIGNAME = "patterns.yaml"
+)
 
 func main() {
 	log.Print("Reading configuration file.")
-	configFile, err := os.ReadFile(CONFIGPATH)
+	configFile, err := os.ReadFile(CONFIGNAME)
 	if err != nil {
 		log.Fatal("Couldn't open config file.")
 	}
 
 	var conf sorter.Config
-	err = json.Unmarshal(configFile, &conf)
+	err = yaml.Unmarshal(configFile, &conf)
 	if err != nil {
 		log.Fatal(err)
 	}
