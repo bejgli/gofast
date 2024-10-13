@@ -1,8 +1,10 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"os"
+	"path/filepath"
 
 	"github.com/bejgli/gofast/sorter"
 	"github.com/fsnotify/fsnotify"
@@ -10,13 +12,22 @@ import (
 )
 
 const (
-	CONFIGDIR  = ".gofast"
-	CONFIGNAME = "patterns.yaml"
+	configDir  = ".gofast"
+	configName = "patterns.yaml"
 )
 
 func main() {
+	home, err := os.UserHomeDir()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	configPath := filepath.Join(home, configDir, configName)
+	flag.StringVar(&configPath, "config", configPath, "Configfile path.")
+	flag.Parse()
+
 	log.Print("Reading configuration file.")
-	configFile, err := os.ReadFile(CONFIGNAME)
+	configFile, err := os.ReadFile(configPath)
 	if err != nil {
 		log.Fatal("Couldn't open config file.")
 	}
